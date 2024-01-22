@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
+import 'package:task_managment_aastu/features/tasks/presentation/screen/create_task.dart';
 import 'package:task_managment_aastu/features/tasks/presentation/screen/home.dart';
 
 class BottomBar extends StatefulWidget {
@@ -31,7 +32,9 @@ class _BottomBarState extends State<BottomBar> {
         child: _widgetOptions[_selectedIndex],
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(context, MaterialPageRoute(builder: (context) => const CreateTask()));
+        },
         child: Icon(
           Ionicons.add,
           color: Colors.white,
