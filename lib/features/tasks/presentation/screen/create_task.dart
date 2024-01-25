@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:task_managment_aastu/core/utils/colors.dart';
 import 'package:task_managment_aastu/features/tasks/presentation/widgets/Text_input_field.dart';
+import 'package:task_managment_aastu/features/tasks/presentation/widgets/date_and_time_widget.dart';
 
 class CreateTask extends StatefulWidget {
   const CreateTask({super.key});
@@ -121,7 +122,14 @@ class _CreateTaskState extends State<CreateTask> {
                     ),
                   ),
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      showModalBottomSheet<void>(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return const DateandTimePicker();
+                        },
+                      );
+                    },
                     child: const Text(
                       'Add Date',
                       style: TextStyle(

@@ -17,6 +17,7 @@ dependencies:
   ionicons: ^0.2.2
   shared_preferences: ^2.2.2
   adaptive_theme: ^3.5.0
+  flutter_date_range_picker: ^0.0.14
 
 dev_dependencies:
   flutter_test:
