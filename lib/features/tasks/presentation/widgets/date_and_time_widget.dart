@@ -20,8 +20,10 @@ class _DateandTimePickerState extends State<DateandTimePicker> {
   void _onDateRangeChanged(DateRange? value) {
     setState(() {
       selectedDateRange = value;
-      startdate.text = selectedDateRange!.start.toString();
-      enddate.text = selectedDateRange!.end.toString();
+      startdate.text =
+          '${selectedDateRange!.start.day.toString()}-${selectedDateRange!.start.month.toString()}-${selectedDateRange!.start.year.toString()}';
+      enddate.text =
+          '${selectedDateRange!.end.day.toString()}-${selectedDateRange!.end.month.toString()}-${selectedDateRange!.end.year.toString()}';
     });
   }
 
@@ -36,6 +38,20 @@ class _DateandTimePickerState extends State<DateandTimePicker> {
           children: [
             Row(
               children: [
+                const SizedBox(
+                  width: 10,
+                ),
+                TextButton(
+                  onPressed: () {},
+                  child: const Text(
+                    'Select',
+                    style: TextStyle(
+                      fontFamily: 'Poppins-Medium',
+                      fontSize: 15,
+                      color: selectedColor,
+                    ),
+                  ),
+                ),
                 const Spacer(),
                 IconButton(
                   onPressed: () => Navigator.pop(context),
@@ -131,12 +147,12 @@ class _DateandTimePickerState extends State<DateandTimePicker> {
                 padding: const EdgeInsets.only(left: 60),
                 child: DateRangePickerWidget(
                   doubleMonth: doubleMonth,
-                  maximumDateRangeLength: 10,
-                  minimumDateRangeLength: 3,
+                  // maximumDateRangeLength: 30,
+                  minimumDateRangeLength: 1,
                   initialDateRange: selectedDateRange,
-                  disabledDates: [DateTime(2023, 11, 20)],
+                  disabledDates: [DateTime(2024, 1, 20)],
                   initialDisplayedDate:
-                      selectedDateRange?.start ?? DateTime(2023, 11, 20),
+                      selectedDateRange?.start ?? DateTime(2024, 1, 20),
                   onDateRangeChanged: _onDateRangeChanged,
                 ),
               ),
